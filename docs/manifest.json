@@ -1,0 +1,12 @@
+{
+  "name": "Docserite",
+  "icon": "/static/icon.svg",
+  "type": "folder",
+  "declude": [
+    "_theme",
+    "static"
+  ],
+  "static": [
+    "static"
+  ]
+}

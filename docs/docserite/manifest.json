@@ -1,0 +1,6 @@
+{
+  "name": "Docserite",
+  "icon": "/static/icon.svg",
+  "type": "docs",
+  "index": "welcome.md"
+}

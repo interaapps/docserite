@@ -1,0 +1,6 @@
+{
+    "initscripts": [
+        "app/init.php",
+        "app/helper.php"
+    ]
+}

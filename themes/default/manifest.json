@@ -1,0 +1,11 @@
+{
+  "name": "Default",
+  "static": [
+    "assets"
+  ],
+  "routes": {
+    "folder": "folder.php",
+    "doc": "doc.php",
+    "everything_else": "404.php"
+  }
+}
