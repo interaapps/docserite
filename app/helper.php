@@ -21,3 +21,7 @@ function replaceFirst($from, $to, $content)
 
     return preg_replace($from, $to, $content, 1);
 }
+
+function getFullURL(){
+    return (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+}

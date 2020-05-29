@@ -553,96 +553,64 @@ class Prajax {
             ((json.data != null) ? json.data : false ),
             ((json.input != null) ? json.input : false ));
     }
-}class Alert {
-    constructor(settings = {closebtn: true, canexit: true, title: ""}) {
-        this.canexit = (settings.canexit != null) ? settings.canexit : true;
-        this.closebtn = (settings.closebtn != null) ? settings.closebtn : true;
-        this.title = (settings.title != null) ? settings.title : "";
+}
 
-        this.backElement = document.createElement("div");
-        $(this.backElement).addClass("alert_background");
-        $("html").append(this.backElement);
-        this.element = document.createElement("div");
-        this.contents = document.createElement("div");
-        $(this.contents).addClass("alert_contents");
-        this.backElement.appendChild(this.element);
-        this.element.appendChild(this.contents);
-        $(this.element).addClass("alert_alert");
-        var outerThis = this;
+// ENDLIBS
 
-        $(this.backElement).click(function() {
-            console.log(outerThis.canexit);
-            if (outerThis.canexit) {
-                outerThis.close();
-            }
-        });
+hljs.initHighlightingOnLoad();
 
-        $(this.element).click(function(e) {
-            e.stopPropagation();
-        });
-        if (this.closebtn) {
-            var close = document.createElement("a");
-            $(close).addClass("waves-effect");
-            $(close).addClass("alert_closebutton");
-            $(close).html("<i class='material-icons'>close</i>");
-            $(close).click(function() {
-                outerThis.close();
-            });
-            outerThis.element.appendChild(close);
+function setDarkTheme(){
+    document.documentElement.style.setProperty('--background', "#1a1e27");
+    document.documentElement.style.setProperty('--block-background', "#212531");
+    document.documentElement.style.setProperty('--text-color', "#FFFFFF");
+    document.documentElement.style.setProperty('--link-color', "#FFFFFF");
+
+    $("#darkmode").css({"background": "#1cad5a"});
+    $("#darkmode span").text("Lightmode");
+    $("#darkmode i").text("wb_sunny");
+}
+
+
+function setLightTheme(){
+    document.documentElement.style.setProperty('--background', "#EEEEEE22");
+    document.documentElement.style.setProperty('--block-background', "#FFFFFF");
+    document.documentElement.style.setProperty('--text-color', "#323232");
+    document.documentElement.style.setProperty('--link-color', "#434343");
+
+    $("#darkmode").css({"background": "#323232"});
+    $("#darkmode span").text("Darkmode");
+    $("#darkmode i").text("nights_stay");
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
         }
-
-        var titleElement = document.createElement("a");
-        $(titleElement).html(this.title).addClass("alert_title");
-        this.element.appendChild(titleElement);
-
-        this.toolbar = document.createElement("div");
-        $(this.toolbar).addClass("alert_toolbar");
-        this.element.appendChild(this.toolbar);
-
-        this.close();
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
     }
+    return "";
+}
 
-    close() {
-        $(this.backElement).hide();
-        return this;
-    }
-
-    open() {
-        $(this.backElement).show();
-        return this;
-    }
-
-    addButton(name, clicked, icon=false) {
-        var btn = document.createElement("a");
-        $(btn).addClass("alert_button");
-        $(btn).click(clicked);
-        var iconHtml = "";
-        if (icon !== false)
-            iconHtml = "<i class='material-icons'>"+icon+"</i>";
-
-        $(btn).html(iconHtml+"<span>"+name+"</span>");
-        this.toolbar.appendChild(btn);
-        return this;
-    }
-
-    addHtml(html) {
-        $(this.contents).append(html);
-        return this;
-    }
-
-    setHtml(html) {
-        $(this.contents).html(html);
-        return this;
-    }
-
-    e() {
-        return this.element;
-    }
-
-    be() {
-        return this.backElement;
-    }
-
+function checkTheme(){
+   if (getCookie("colortheme") === "dark") {
+        setDarkTheme();
+   } else {
+        setLightTheme();
+   }
 }
 
 var snackBarTimeout;
@@ -780,12 +748,13 @@ $(document).ready(function() {
             $(this).$("i").css("transform", "rotate(90deg)");
         }
     });
-
-});
-
-let profilePictureImageBase64 = "";
-let responseAlert = new Alert({
-    closebtn: false,
-    canexit: false,
-    title: ""
+    $("#darkmode").click(function(){
+        if (getCookie("colortheme") === "dark") {
+            setCookie("colortheme", "light", 365);
+        } else {
+            setCookie("colortheme", "dark", 365);
+        }
+        checkTheme();
+    });
+    checkTheme();
 });
