@@ -22,7 +22,11 @@ class Docs
     }
 
     public function each(\Closure $each){
-        foreach (scandir($this->path) as $file) {
+        $dir = scandir($this->path);
+        if (isset($this->manifest->order));
+            $dir = sortArrayByArray($dir, $this->manifest->order);
+
+        foreach ($dir as $file) {
             if ($file != "." && $file != ".." && $file != "manifest.json") {
                 $file = $this->path . "/" . $file;
                 if (is_dir($file)) {

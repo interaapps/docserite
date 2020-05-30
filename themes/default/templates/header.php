@@ -18,9 +18,9 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="/assets/css/app.css">
     <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
     <script src="/assets/js/app.js"></script>
-
+    
     <title><?= isset($title) ? $title : "" ?></title>
 </head>
 <body>
@@ -39,8 +39,5 @@
     <div id="main">
         </head>
         <body>
-
-
-
-
-
+            <a class="fab" target="_blank" href="https://twitter.com/intent/tweet?text=<?= htmlspecialchars(getFullURL()) ?>" style="position: fixed; right: 20px; bottom: 90px;"><i>share</i><span>Share</span></a>
+            <a id="darkmode" class="fab" style="position: fixed; right: 20px; bottom: 20px; background: #323232"><i>nights_stay</i><span>Darkmode</span></a>
