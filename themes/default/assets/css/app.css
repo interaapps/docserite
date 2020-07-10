@@ -297,65 +297,52 @@ i {
     margin-top: 10px;
 }
 
-#messages {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 1000px;
-    line-height: 0;
-    height: 26px !important;
-}
-
-#messages:hover {
-    background: #00000012;
-    cursor: pointer;
-}
-
-#messages:focus {
-    background: #00000032;
-}
-
-#messagescontainer {
-    position: absolute;
-    min-width: 100px;
-    min-height: 100px;
-    top: 67px;
-    background: var(--block-background);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 3px 0px;
-    border-radius: 7px;
-    right: 92px;
-}
-
-.notification {
-    border-bottom: #EEEEEE 1px solid;
-    padding: 15px 20px;
+.article_creator {
+    background: #262b39;
+    border-radius: 6px;
+    margin-top: 40px;
+    padding: 17px;
     box-sizing: border-box;
-    line-height: 24px;
-    min-width: 200px;
+    display: flex;
+    width: max-content;
+    max-width: 100%;
 }
 
-.notification h4 {
-    color: #212121;
-    font-size: 18px;
+.article_creator img {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    vertical-align: top
 }
 
-.notification p {
-    color: #323232;
-    font-size: 17px;
+.article_creator a {
+    color: #FFFFFF;
 }
 
-.notification .time {
-    display: block;
-    font-size: 15px;
-    color: #545454;
+.article_creator p {
+    font-size: 14px;
+    color: #FFFFFF;
 }
 
+.article_creator div {
+  margin-left: 20px;
+}
+
+
+@media screen and (max-width: 720px) {
+
+  .article_creator {
+      display: block;
+  }
+  .article_creator div {
+    margin-left: 0px;
+  }
+}
 
 .navbutton {
     padding-left: 10px;
     padding-right: 10px;
 }
-
-
 
 
 #main {
@@ -578,135 +565,6 @@ i {
 .flatRoundButton1 i {
     font-size: 30px;
 }
-
-/* Classposts */
-#classPosts {
-    margin-top: 20px;
-}
-
-.classPost {
-    border: solid #CCCCCC 2px;
-    border-radius: 6px;
-    padding: 7px 14px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-bottom: 20px;
-}
-
-.classPost:hover {
-    border: solid #4542f4 2px;
-}
-
-.classPostTitle {
-    display: block;
-    color: #222222;
-    font-size: 18px;
-}
-
-.classPostPost {
-    display: block;
-    color: #767676;
-    max-height: 400px;
-    font-size: 13px;
-}
-
-#courseToolbar {
-    display: flex;
-    margin: auto 0px;
-    position: fixed;
-    top: 0px;
-    z-index: 10000000;
-    height: 65px;
-
-    left: 50%;
-    width: auto;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-
-
-.courseToolbarSection {
-    width: 106px;
-    text-align: center;
-    cursor: pointer;
-    padding-top: 7px;
-    color: #434343;
-}
-
-.courseToolbarSection i {
-    font-size: 28px;
-    display: block;
-}
-
-.courseToolbarSelected {
-    border-bottom: 3px #4542f4 solid;
-    background: #4542f433;
-    color: #4542f4;
-}
-
-.course_peoplelistentry {
-    display: block;
-    height: 50px;
-}
-
-.course_peoplelistentry a {
-    color: #323232;
-    font-size: 18px;
-    padding-left: 20px;
-}
-
-.course_peoplelistentry img {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    vertical-align: middle;
-}
-
-#userautocompletion {
-    border-radius: 5px;
-    border: #EEEEEE 2px solid;
-    border-bottom: none;
-    position: absolute;
-    background: var(--block-background);
-    min-width: 200px;
-    max-width: 100%;
-    z-index: 100;
-}
-
-.userautocompletionfocussed {
-    background: #EEEEEE;
-}
-
-#userautocompletion div {
-    padding: 10px;
-    border-bottom: #EEEEEE 2px solid;
-    cursor: pointer;
-}
-
-#userautocompletion div img {
-    border-radius: 500px;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 20px;
-}
-
-.colorSelection {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    border-radius: 100px;
-    cursor: pointer;
-    border: #323232 solid 2px;
-}
-
 @media screen and (max-width: 720px) {
     #logo {
         padding-left: 20px;
@@ -729,62 +587,9 @@ i {
 }
 
 
-
-.user_contents {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 270px;
-}
-
-.user_middle_test {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.user_welcome_text {
-    font-size: 29px;
-}
-
-.user_profilepic {
-    border-radius: 100%;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    border: #173efb 3px solid;
-}
-
-
-.user_edit_before {
-    display: block;
-    font-size: 15px;
-    color: #999999;
-    margin-top: 10px;
-}
-
-.user_edit {
-    display: block;
-    border: none;
-    font-size: 18px;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
 th {
     font-weight: normal;
 }
-
-.page_heading {
-    text-align: center;
-    margin: 0px auto;
-}
-
-.page_heading img {
-    display:block;
-    margin: 0px auto;
-    margin-bottom: 12px;
-}
-
 
 
 @media screen and (max-width: 720px) {

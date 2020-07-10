@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/static/icon.svg" width="100"><br>Docserite</p>
+<p align="center"><img src="exampledocs/static/icon.svg" width="100"><br>Docserite</p>
 
 ![](https://imgur.com/8xsXGUb.png)
 

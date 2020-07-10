@@ -37,7 +37,7 @@
 
 ## Code
 ```markdown
-\```javascript
+```javascript
 class Test {
     
 }
@@ -66,7 +66,6 @@ id|name|mail
 1|Justin|justin@example.interaapps.de
 2|Tom|tom@example.interaapps.de
 3|Martin|martin@example.interaapps.de
-4|Justin|justin@example.interaapps.de
 
 ## Horizontal lines
 
