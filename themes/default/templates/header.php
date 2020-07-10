@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/svg+xml" href="<?= isset($docs) ? $docs->getManifest()->icon : DocsConfig::$config->icon ?>">
 
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="/assets/css/app.css" type="text/css">
 
@@ -40,4 +40,4 @@
         </head>
         <body>
             <!--<a class="fab" target="_blank" href="https://twitter.com/intent/tweet?text=<?= htmlspecialchars(getFullURL()) ?>" style="position: fixed; right: 20px; bottom: 90px;"><i>share</i><span>Share</span></a>-->
-            <a id="darkmode" class="fab" style="position: fixed; right: 20px; bottom: 20px; background: #323232"><i>nights_stay</i><span>Darkmode</span></a>
+            <a id="darkmode" class="fab rippleeffect" style="position: fixed; right: 20px; bottom: 20px; background: #323232"><i>nights_stay</i><span>Darkmode</span></a>

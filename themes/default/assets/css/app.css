@@ -6,6 +6,10 @@
     --link-color: #434343;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     height: 100%;
     background: var(--background);
@@ -182,7 +186,7 @@ loadindicator {
 * {
     margin: 0px;
     padding: 0px;
-    font-family: "Jost", "Questrial", "Product sans", "Sans serif";
+    font-family: "Jost", "Sans serif";
     position: relative;
     outline: none !important;
 }

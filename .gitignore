@@ -3,6 +3,7 @@
 /tempdir
 /uppm_target
 /.idea
+/docs
 env.json
 .idea
 package-lock.json

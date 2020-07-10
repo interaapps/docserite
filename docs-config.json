@@ -2,5 +2,5 @@
   "name": "docserite",
   "icon": "/static/icon.svg",
   "theme": "default",
-  "docs": "docs"
+  "docs": "exampledocs"
 }

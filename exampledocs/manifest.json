@@ -2,7 +2,7 @@
   "name": "Docserite",
   "icon": "/static/icon.svg",
   "type": "folder",
-  "declude": [
+  "exclude": [
     "_theme",
     "static"
   ],
