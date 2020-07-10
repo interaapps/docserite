@@ -68,8 +68,7 @@ class DocsController {
         return view((new Str(DocsConfig::$theme->routes->everything_else))->replace(".php", ""));
     }
 
-    public static function getCurrentDoc() : Doc
-    {
+    public static function getCurrentDoc() : Doc {
         return self::$currentDoc;
     }
 

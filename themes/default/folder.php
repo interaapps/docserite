@@ -5,7 +5,7 @@
     <div id="folders">
     <?php
         \app\controller\DocsController::getCurrentFolder()->each(function(\app\classes\Docs $docs){
-            echo "<a href='".$docs->getLink()."'>
+            echo "<a class='rippleeffect' href='".$docs->getLink()."'>
             <img src='".$docs->getManifest()->icon."'>
             <span>".$docs->getName()."</span>
             </a>";

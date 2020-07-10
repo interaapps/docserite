@@ -6,6 +6,7 @@
   "order": [
     "welcome.md",
     "structure.md",
+    "markdown.md",
     "subfolder"
   ]
 }

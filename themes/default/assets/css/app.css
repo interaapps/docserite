@@ -1,5 +1,6 @@
 :root {
     --block-background: #FFFFFF;
+    --block-background-opacity: #FFFFFF77;
     --background: #EEEEEE44;
     --text-color: #323232;
     --link-color: #434343;
@@ -192,7 +193,6 @@ h1, h2, h3, h4, h5 {
 
 body {
     color: var(--text-color);
-    transition: background 0.3s;
 }
 
 a:link {
@@ -216,13 +216,13 @@ i {
 #nav {
     top: 0px;
     width: 100%;
-    background: var(--block-background);
+    background: var(--block-background-opacity);
+    backdrop-filter: blur(10px);
     position: fixed;
     height: 65px;
     line-height: 65px;
     box-shadow: rgba(0, 0, 0, 0.55) 0px -38px 18px 34px;
     z-index: 1000;
-    transition: 0.3s;
     display: block;
     border-bottom: 1px solid #00000022;
 }
@@ -380,7 +380,7 @@ i {
     padding: 0.5em;
     background: transparent;
     background: #1a1e27;
-    border-radius: 3px;
+    border-radius: 5px;
     margin-top: 30px;
     margin-bottom: 30px;
     box-shadow: #00000011 0px 0px 4px 1px;
@@ -795,6 +795,53 @@ th {
     }
 }
 
+table {
+    min-width: 40%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+    margin: 0px;
+}
+
+.contents h2 {
+    margin-top: 20px;
+}
+
+
+blockquote {
+    border-left: 3px solid #00000022;
+    padding-left: 10px;
+}
+
+#overview {
+    position: fixed;
+    right: 30px;
+    top: 120px;
+}
+
+#overview a:link,
+#overview a:active,
+#overview a:visited {
+    color: #fa6767;
+    text-decoration: none;
+    display: block;
+}
+
+#overview h3 {
+    color: #fa6767;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 1400px) {
+    #overview {
+        display: none;
+    }
+}
 
 
 
@@ -807,7 +854,7 @@ th {
     top: 65px;
     background: var(--block-background);
     overflow-x: hidden;
-    transition: width 1s, background 0.3s;
+    transition: width 1s;
 }
 
 .sideicon {
@@ -1135,6 +1182,7 @@ hr {
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
     cursor: pointer;
     user-select: none;
+    z-index: 1000;
 }
 
 .fab i {
@@ -1169,4 +1217,145 @@ hr {
     .fab span {
         display: none;
     }
+}
+
+/*!
+ * Waves v0.7.6
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014-2018 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE */
+ .waves-effect {
+    position: relative;
+    cursor: pointer;
+    /* display: inline-block; */
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.waves-effect .waves-ripple {
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+    -webkit-transform: scale(0) translate(0, 0);
+    -moz-transform: scale(0) translate(0, 0);
+    -ms-transform: scale(0) translate(0, 0);
+    -o-transform: scale(0) translate(0, 0);
+    transform: scale(0) translate(0, 0);
+    pointer-events: none;
+}
+.waves-effect.waves-light .waves-ripple {
+    background: rgba(255, 255, 255, 0.4);
+}
+.waves-effect.waves-classic .waves-ripple {
+    background: rgba(0, 0, 0, 0.2);
+}
+.waves-effect.waves-classic.waves-light .waves-ripple {
+    background: rgba(255, 255, 255, 0.4);
+}
+.waves-notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+.waves-button,
+.waves-circle {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+.waves-button,
+.waves-button:hover,
+.waves-button:visited,
+.waves-button-input {
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0);
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
+    z-index: -50;
+}
+.waves-button {
+    border-radius: 0.2em;
+}
+.waves-button-input {
+    margin: 0;
+}
+.waves-input-wrapper {
+    border-radius: 0.2em;
+    vertical-align: bottom;
+}
+.waves-input-wrapper.waves-button {
+    padding: 0;
+}
+.waves-input-wrapper .waves-button-input {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.waves-circle {
+    text-align: center;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    border-radius: 50%;
+}
+.waves-float {
+    -webkit-mask-image: none;
+    -webkit-box-shadow: 0px 1px 1.5px 1px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 1px 1.5px 1px rgba(0, 0, 0, 0.12);
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+}
+.waves-float:active {
+    -webkit-box-shadow: 0px 8px 20px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 8px 20px 1px rgba(0, 0, 0, 0.3);
+}
+.waves-block {
+    display: block;
+}
+
+.waves-effect.waves-red .waves-ripple {
+    background-color: #f44242;
+}
+
+.waves-effect.waves-blue .waves-ripple {
+    background-color: #4147f4;
+}
+
+.waves-effect.waves-turquoise .waves-ripple {
+    background-color: #41f4a0;
+}
+
+.waves-effect.waves-green .waves-ripple {
+    background-color: #52f441;
 }

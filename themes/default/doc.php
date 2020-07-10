@@ -25,6 +25,27 @@
     <div class="contents">
         <?= \app\controller\DocsController::getCurrentDoc()->getContent() ?>
     </div>
+
+    <div id="overview">
+        <h3>Overview:</h3>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+        $(".contents h1, .contents h2").each(function(element){
+            console.log(element);
+            var id = "contents_"+element.tagName+"_"+element.innerText.replace(/[\W_]+/g,"_");
+            element.id = id;
+            if (element.tagName == "H1")
+                $("#overview").append($n("a").attr("href", "#"+id).text(element.innerText));
+            else if (element.tagName == "H2")
+                $("#overview").append($n("a").css({
+                    "paddingLeft": "10px"
+                }).attr("href", "#"+id).text(element.innerText));
+                
+        });
+    });
+    </script>
 <app>
 
 
